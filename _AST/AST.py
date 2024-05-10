@@ -39,7 +39,7 @@ def repeteCount(ast:Repetition) -> tuple: #tuple (int or None, 승수) #ast에 N
     return ast.repetition, ast.power
 
 """
-[repetCount]
+[repeteCount]
 
 if) 객체의 child가 있는지 확인
     *child: Node들이 담긴 리스트
@@ -56,5 +56,5 @@ if) 객체의 child가 있는지 확인
 
                 if) 정수 값의 경우: repetition이 int, 지수에 0을 넣어 값을 1로 만듦.
 
-더 이상 child가 없다면, Repetition을 이용해 반환한 값을 상위 재귀함수로 보냄.
+더 이상 child가 없다면, 클래스 Repetition의 repetition과 AST의 power 연산을 이용해 반환한 값을 상위 재귀함수로 보냄.
 """
