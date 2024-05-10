@@ -1,18 +1,29 @@
 class Node:
-    child:list
+    child:list|None = None
 
 class AST(Node):
-    identifier:type
-    Power:int|None = 0
-    def _make_child(self, node:Node):
+    identifier:str # 코드의 종류
+    Power:int|None = 0 # 반복 승수, 자식의 repetition이 None인 경우에만 +1
+    def _make_child(self, node:Node) -> None: # child list에 새로운 노드 할당
         self.child.append(node)
+    def _is_child_exist(self) -> bool: #child가 존재하는지 확인
+        return False if self.child == None else True
 
-class DefFunc(AST):
-    Power:int|None = 0
+class DefFunc(AST):...
 
 class Repetition(AST):
-    repetition:int|None = None
+    repetition:int|None = None # 반복 횟수, None이면 n번 반복, range() 안에 숫자가 있는 경우 그 숫자로 할당
 
 class For(Repetition):...
 class While(Repetition):...
 class In(Repetition):...
+
+class Section(AST):
+    isOpen:bool|None = True #Section의 열림 여부
+
+class Quotes(Section):...
+class Bracket(Section):...
+
+class Small(Bracket):...
+class Middle(Bracket):...
+class Large(Bracket):...
