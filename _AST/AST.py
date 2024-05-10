@@ -30,11 +30,10 @@ class Middle(Bracket):...
 class Large(Bracket):...
 
 
-
-def repetCount(ast:Repetition) -> tuple: #tuple (int or None, 승수) #ast에 Node를 넣음.
+def repeteCount(ast:Repetition) -> tuple: #tuple (int or None, 승수) #ast에 Node를 넣음.
     if ast._is_child_exist:
         for i in ast.child:
-            _repetition, _power = repetCount(i) #_power는 그 전 재귀함수 호출로 나오는 power
+            _repetition, _power = repeteCount(i) #_power는 그 전 재귀함수 호출로 나오는 power
             if not _repetition: #None인 경우
                 ast.power = max(ast.power, _power+1) #_power(= 0) + 1과 ast.power 비교 -> 차수의 최댓값을 구함.
     return ast.repetition, ast.power
