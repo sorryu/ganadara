@@ -1,7 +1,5 @@
-import typing
-
 class Node:
-    child:typing.List[int]
+    child:list
 
 class AST(Node):
     identifier:type
