@@ -1,6 +1,6 @@
 code = []
 
-with open("test.txt", "r") as f: #코드 원형으로 갖고 옴.
+with open("your_code.txt", "r") as f:    #Please replace your_code.txt with your code file.
     code = list(map(lambda line: line.rstrip(),f.readlines())) #줄바꿈 없애기 (By using Lambda)
 
 print(code)
